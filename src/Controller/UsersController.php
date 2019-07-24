@@ -10,7 +10,7 @@ use App\Controller\AppController;
 class UsersController extends AppController
 {
 	public function index (){
-		$users = $this->Users->find('all');
+		$users = $this->paginate($this->Users, ['scope'=>'user']);
 		$this->set('users',$users);
 	}
 
